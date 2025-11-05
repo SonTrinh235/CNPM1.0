@@ -1,0 +1,66 @@
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+    font-family: "Inter", "Arial", sans-serif;
+    color: #222;
+    min-height: 100vh;
+  }
+  
+  .settings-main {
+    display: flex;
+    flex: 1;
+    margin-top: 10px;
+  }
+  
+  .settings-content {
+    flex: 1;
+    padding: 20px 40px;
+    background-color: #fafafa;
+    box-sizing: border-box;
+  }
+  
+  .settings-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 22px;
+  }
+  
+  .settings-card {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  }
+  
+  .settings-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #1e73be;
+  }
+  
+  .settings-card label {
+    font-size: 15px;
+    color: #333;
+  }
+  
+  .edit-btn {
+    margin-top: 10px;
+    background-color: #1e73be;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .edit-btn:hover {
+    background-color: #155c96;
+  }
+  

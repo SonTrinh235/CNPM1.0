@@ -1,0 +1,31 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    background: linear-gradient(to right, #f8f9fa, #ffffff);
+    text-align: center;
+  }
+  .home-content h1 {
+    font-size: 2rem;
+    color: #003399;
+  }
+  .home-buttons {
+    margin-top: 20px;
+  }
+  .btn-primary, .btn-secondary {
+    padding: 10px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+  .btn-primary {
+    background: #0056d2;
+    color: white;
+  }
+  .btn-secondary {
+    border: 2px solid #0056d2;
+    color: #0056d2;
+  }
+  

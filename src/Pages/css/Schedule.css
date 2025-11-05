@@ -1,0 +1,43 @@
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+    font-family: "Inter", "Arial", sans-serif;
+    color: #222;
+    min-height: 100vh;
+  }
+  
+  .schedule-main {
+    display: flex;
+    flex: 1;
+    margin-top: 10px;
+  }
+  
+  .schedule-content {
+    flex: 1;
+    padding: 20px 40px;
+  }
+  
+  .rbc-calendar {
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .rbc-toolbar {
+    margin-bottom: 10px;
+  }
+  
+  .rbc-event {
+    border-radius: 8px !important;
+    font-size: 13px;
+    padding: 4px 6px !important;
+  }
+  
+  .rbc-time-view {
+    border: none;
+  }
+  
+  .rbc-time-content > * + * > * {
+    border-left: 1px solid #eee !important;
+  }
+  

@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 25px;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .navbar input {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin-right: 10px;
+  }
+  .btn {
+    border: none;
+    background: #f4f4f4;
+    padding: 6px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  

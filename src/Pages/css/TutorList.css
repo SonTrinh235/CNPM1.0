@@ -1,0 +1,139 @@
+.tutorlist-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  font-family: "Inter", "Arial", sans-serif;
+  color: #222;
+  min-height: 100vh;
+}
+.tutorlist-main {
+  display: flex;
+  flex: 1;
+  margin-top: 10px;
+}
+
+.sidebar {
+  width: 220px;
+  background: #fff;
+  border-right: 1px solid #eee;
+  padding: 20px 10px;
+  border-radius: 16px;
+  margin-left: 20px;
+  height: fit-content;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  transition: 0.2s ease;
+}
+
+.sidebar li:hover,
+.sidebar .active {
+  background-color: #f0f5ff;
+  color: #0047ab;
+}
+
+/* Content */
+.tutorlist-content {
+  flex: 1;
+  padding: 0 40px;
+}
+
+.tutorlist-content h3 {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Tutor grid */
+.tutor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Tutor card */
+.tutor-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tutor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.tutor-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background-color: #eee;
+  margin-bottom: 10px;
+}
+
+.tutor-card h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.tutor-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Tags */
+.tags {
+  margin-top: 8px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 5px 12px;
+  background-color: #f0f4ff;
+  border-radius: 12px;
+  margin-right: 6px;
+  font-size: 13px;
+  color: #0047ab;
+  font-weight: 500;
+}
+
+/* Buttons */
+.tutor-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.tutor-actions button {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 8px 0;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.tutor-actions button:hover {
+  background-color: #0047ab;
+  color: white;
+}
+
+
+
+
