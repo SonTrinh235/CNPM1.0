@@ -14,7 +14,7 @@ const Login = () => {
 
     if (username === "admin" && password === "123") {
       console.log("Đăng nhập thành công:", { username, remember });
-      navigate("/mentors");
+      navigate("/tutors");
     } else {
       alert("Sai tên đăng nhập hoặc mật khẩu!");
     }

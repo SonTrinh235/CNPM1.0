@@ -5,7 +5,6 @@ import { SettingsProvider } from "./Context/SettingsContext";
 
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
-import Mentors from "./Pages/Mentors";
 import TutorList from "./Pages/TutorList";
 import TutorDetail from "./Pages/TutorDetail";
 import Library from "./Pages/Library";
@@ -22,7 +21,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/mentors" element={<Mentors />} />
           <Route path="/tutors" element={<TutorList />} />
           <Route path="/tutor/:id" element={<TutorDetail />} />
           <Route path="/library" element={<Library />} />

@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import MentorCard from "../Components/MentorCard/MentorCard";
-import "./css/Mentors.css";
 import Navbar from "../Components/Navbar/Navbar";
 import Sidebar from "../Components/Sidebar/Sidebar";
 import { SettingsContext } from "../Context/SettingsContext";
+import "./css/Mentors.css";
 
 const Mentors = () => {
   const { darkMode, fontSize } = useContext(SettingsContext);
@@ -17,11 +17,11 @@ const Mentors = () => {
   return (
     <div className={`mentors-container ${darkMode ? "dark" : ""} font-${fontSize}`}>
       <Navbar />
-      <div className="mentors-main">
+      <div className="mentors-layout">
         <Sidebar />
 
         <div className="mentors-content">
-          <h2>Danh sách Mentor hiện có</h2>
+          <h2>Danh sách Tutor hiện có</h2>
           <div className="mentor-list">
             {mentors.map((m, i) => (
               <MentorCard key={i} mentor={m} />
