@@ -5,14 +5,12 @@ import Sidebar from "../Components/Sidebar/Sidebar";
 import { SettingsContext } from "../Context/SettingsContext";
 import "./css/Mentors.css";
 
+import { MOCK_USERS } from "../data/users";
+
 const Mentors = () => {
   const { darkMode, fontSize } = useContext(SettingsContext);
 
-  const mentors = [
-    { name: "Nguyễn Văn A", subject: "Toán", rating: 4.9 },
-    { name: "Trần Thị B", subject: "Tiếng Anh", rating: 4.8 },
-    { name: "Lê Văn C", subject: "Vật lý", rating: 4.7 },
-  ];
+  const tutorsList = MOCK_USERS.filter((user) => user.role === "tutor");
 
   return (
     <div className={`mentors-container ${darkMode ? "dark" : ""} font-${fontSize}`}>
@@ -23,9 +21,23 @@ const Mentors = () => {
         <div className="mentors-content">
           <h2>Danh sách Tutor hiện có</h2>
           <div className="mentor-list">
-            {mentors.map((m, i) => (
-              <MentorCard key={i} mentor={m} />
-            ))}
+            {tutorsList.length > 0 ? (
+              tutorsList.map((tutor) => (
+                <MentorCard 
+                  key={tutor.id} 
+                  mentor={{
+                    id: tutor.id,
+                    username: tutor.username,
+                    name: tutor.fullName, 
+                    subject: tutor.expertise ? tutor.expertise.join(", ") : tutor.faculty, 
+                    rating: tutor.rating,
+                    avatar: tutor.avatar
+                  }} 
+                />
+              ))
+            ) : (
+              <p>Hiện chưa có Tutor nào trong hệ thống.</p>
+            )}
           </div>
         </div>
       </div>

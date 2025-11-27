@@ -1,0 +1,78 @@
+.create-class-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .create-class-container h2 {
+    color: #004d99;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .create-class-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .create-class-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .create-class-form input,
+  .create-class-form select,
+  .create-class-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .form-row .form-group {
+    flex: 1;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .btn-submit {
+    background-color: #004d99;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .btn-submit:hover {
+    background-color: #003366;
+  }
+  
+  .btn-cancel {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #ddd;
+  }

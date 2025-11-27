@@ -1,19 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContext";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const navigate = useNavigate();
+  
+  const { user, logout } = useAuth(); 
 
   const handleToggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("userToken");
-    localStorage.removeItem("userInfo");
+    logout(); 
     navigate("/login");
   };
 
@@ -22,7 +24,6 @@ const Navbar = () => {
     navigate(path);
   };
 
-  // đóng menu khi click ra ngoài
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -33,6 +34,8 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const displayLabel = user?.role === 'tutor' ? "Tutor" : "Sinh viên";
+
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -42,12 +45,17 @@ const Navbar = () => {
       <div className="navbar-right">
         <input type="text" placeholder="Search..." />
         <div className="user-menu" ref={menuRef}>
+          
           <button className="btn" onClick={handleToggleMenu}>
-            Sinh viên ▾
+            {displayLabel} ▾
           </button>
 
           {menuOpen && (
             <div className="dropdown-menu">
+              <div style={{ padding: '8px 16px', fontWeight: 'bold', color: '#666', borderBottom: '1px solid #eee' }}>
+                {user?.fullName || "Người dùng"}
+              </div>
+              
               <button onClick={() => handleNavigate("/profile")}>Thông tin</button>
               <button onClick={() => handleNavigate("/settings")}>Cài đặt</button>
               <hr />

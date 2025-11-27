@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../Context/AuthContext";
 import "./css/Login.css";
 import Logo from "../Assets/BK_logo.png";
 
@@ -7,16 +8,25 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
+  
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const cleanUsername = username.trim();
+    const cleanPassword = password.trim();
+    const result = login(cleanUsername, cleanPassword);
 
-    if (username === "admin" && password === "123") {
-      console.log("Đăng nhập thành công:", { username, remember });
-      navigate("/tutors");
+    if (result.success) {
+      console.log("Đăng nhập thành công:", result);
+      if (result.role === 'tutor') {
+        navigate("/my-classes", { replace: true }); 
+      } else {
+        navigate("/tutors", { replace: true }); 
+      }
     } else {
-      alert("Sai tên đăng nhập hoặc mật khẩu!");
+      alert(result.message || "Sai tên đăng nhập hoặc mật khẩu!");
     }
   };
 
@@ -33,7 +43,7 @@ const Login = () => {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Nhập tên tài khoản"
+              placeholder="Nhập tên tài khoản (student1 / tutor1)"
               required
             />
           </div>
@@ -45,7 +55,7 @@ const Login = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Nhập mật khẩu"
+              placeholder="Nhập mật khẩu (123)"
               required
             />
           </div>

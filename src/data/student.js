@@ -9,6 +9,7 @@ const student = {
     phone: "0911234567",
     email: "supanika@student.hcmut.edu.vn",
     avatar: "",
+    classes: "79757.CO1027.003682_CQ",
   };
   
   export default student;
