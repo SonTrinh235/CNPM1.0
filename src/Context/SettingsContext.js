@@ -1,6 +1,6 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 
-export const SettingsContext = createContext();
+const SettingsContext = createContext();
 
 export const SettingsProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
@@ -21,6 +21,12 @@ export const SettingsProvider = ({ children }) => {
     localStorage.setItem("darkMode", darkMode);
     localStorage.setItem("fontSize", fontSize);
     localStorage.setItem("emailNotify", emailNotify);
+
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
   }, [darkMode, fontSize, emailNotify]);
 
   return (
@@ -38,3 +44,5 @@ export const SettingsProvider = ({ children }) => {
     </SettingsContext.Provider>
   );
 };
+
+export const useSettings = () => useContext(SettingsContext);

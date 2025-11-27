@@ -31,11 +31,11 @@ const Sidebar = () => {
               </NavLink>
             </li>
 
-            <li>
+            {/* <li>
               <NavLink to="/tutor/create-class" className={({ isActive }) => (isActive ? "active" : "")}>
                 Tạo lớp mới
               </NavLink>
-            </li>
+            </li> */}
           </>
         ) : (
           /* --- MENU STUDENT --- */

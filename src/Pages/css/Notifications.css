@@ -97,3 +97,57 @@
     stroke: gold;
   }
   
+
+  .create-notify-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  
+  .create-notify-box h3 {
+    margin-top: 0;
+    color: #007bff;
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .create-notify-box .form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .create-notify-box select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .create-notify-box textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    resize: vertical;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+  
+  .btn-send {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+  }
+  
+  .btn-send:hover {
+    background-color: #0056b3;
+  }

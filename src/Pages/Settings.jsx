@@ -1,30 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Sidebar from "../Components/Sidebar/Sidebar";
 import "./css/Settings.css";
+import { useSettings } from "../Context/SettingsContext";
 
 const Settings = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  const [emailNotify, setEmailNotify] = useState(true);
-  const [fontSize, setFontSize] = useState("normal");
-
-  // Lấy lại cài đặt khi load trang
-  useEffect(() => {
-    const savedDark = localStorage.getItem("darkMode") === "true";
-    const savedEmail = localStorage.getItem("emailNotify") === "true";
-    const savedFont = localStorage.getItem("fontSize") || "normal";
-
-    setDarkMode(savedDark);
-    setEmailNotify(savedEmail);
-    setFontSize(savedFont);
-  }, []);
-
-  // Lưu vào localStorage mỗi khi thay đổi
-  useEffect(() => {
-    localStorage.setItem("darkMode", darkMode);
-    localStorage.setItem("emailNotify", emailNotify);
-    localStorage.setItem("fontSize", fontSize);
-  }, [darkMode, emailNotify, fontSize]);
+  const {
+    darkMode,
+    setDarkMode,
+    emailNotify,
+    setEmailNotify,
+    fontSize,
+    setFontSize,
+  } = useSettings();
 
   return (
     <div className={`settings-container ${darkMode ? "dark" : ""}`}>
