@@ -10,7 +10,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <ul>
-        {/* --- MENU DÀNH RIÊNG CHO TUTOR --- */}
+        {/* --- MENU TUTOR --- */}
         {role === "tutor" ? (
           <>
             <li>
@@ -26,21 +26,25 @@ const Sidebar = () => {
             </li>
 
             <li>
+              <NavLink to="/library" className={({ isActive }) => (isActive ? "active" : "")}>
+                Thư viện tài liệu
+              </NavLink>
+            </li>
+
+            <li>
               <NavLink to="/tutor/create-class" className={({ isActive }) => (isActive ? "active" : "")}>
                 Tạo lớp mới
               </NavLink>
             </li>
           </>
         ) : (
-          /* --- MENU DÀNH RIÊNG CHO SINH VIÊN --- */
+          /* --- MENU STUDENT --- */
           <>
             <li>
               <NavLink to="/tutors" className={({ isActive }) => (isActive ? "active" : "")}>
                 Tìm gia sư
               </NavLink>
             </li>
-
-            {/* Đã thêm mục này cho Sinh viên */}
             <li>
               <NavLink to="/my-classes" className={({ isActive }) => (isActive ? "active" : "")}>
                 Lớp của tôi

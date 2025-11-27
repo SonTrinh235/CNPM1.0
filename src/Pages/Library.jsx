@@ -1,11 +1,15 @@
+// ... các import cũ giữ nguyên
 import React, { useState } from "react";
 import "./css/Library.css";
 import Navbar from "../Components/Navbar/Navbar";
 import Sidebar from "../Components/Sidebar/Sidebar";
 import materials from "../data/materials";
 
+import MaterialDetail from "./MaterialDetail"; 
+
 const Library = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedMaterial, setSelectedMaterial] = useState(null);
 
   const filtered = materials.filter(
     (item) =>
@@ -20,30 +24,46 @@ const Library = () => {
         <Sidebar />
 
         <div className="library-content">
-          <div className="library-toolbar">
-            <button className="filter-btn">All ▼</button>
-            <input
-              type="text"
-              placeholder="Tìm kiếm"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+          {selectedMaterial ? (
+            <MaterialDetail 
+              material={selectedMaterial} 
+              onBack={() => setSelectedMaterial(null)} 
             />
-            <button className="sort-btn">Sort by name ▼</button>
-            <button className="view-btn">List ▼</button>
-          </div>
-
-          <div className="material-list">
-            {filtered.map((item) => (
-              <div key={item.id} className="material-card">
-                <div className="material-img"></div>
-                <div className="material-info">
-                  <h4>| {item.code}</h4>
-                  <p className="title">{item.title}</p>
-                  <p className="author">{item.author}</p>
-                </div>
+          ) : (
+            <>
+              <div className="library-toolbar">
+                <button className="filter-btn">All ▼</button>
+                <input
+                  type="text"
+                  placeholder="Tìm kiếm"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                <button className="sort-btn">Sort by name ▼</button>
+                <button className="view-btn">List ▼</button>
               </div>
-            ))}
-          </div>
+
+              <div className="material-list">
+                {filtered.map((item) => (
+                  <div 
+                    key={item.id} 
+                    className="material-card"
+                    // THÊM SỰ KIỆN CLICK VÀO CARD
+                    onClick={() => setSelectedMaterial(item)}
+                    style={{cursor: "pointer"}}
+                  >
+                    <div className="material-img"></div>
+                    <div className="material-info">
+                      <h4>| {item.code}</h4>
+                      <p className="title">{item.title}</p>
+                      <p className="author">{item.author}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+
         </div>
       </div>
     </div>

@@ -1,4 +1,3 @@
-// Pages/CreateClass.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext"; 
@@ -57,11 +56,12 @@ const CreateClass = () => {
             <label>Môn học</label>
             <select name="subject" value={classData.subject} onChange={handleChange} required>
               <option value="">Chọn môn...</option>
-              <option value="Toán">Toán</option>
-              <option value="Lý">Vật Lý</option>
-              <option value="Hóa">Hóa Học</option>
-              <option value="Anh">Tiếng Anh</option>
-              <option value="Tin">Tin học/Lập trình</option>
+              <option value="Tiếng Anh">Tiếng Anh </option>
+              <option value="Đại cương">Đại cương </option>
+              <option value="Cơ sở ngành">Cơ sở ngành</option>
+              <option value="Chuyên ngành">Chuyên ngành</option>
+              <option value="Tự chọn">Tự chọn</option>
+              <option value="Hướng dẫn đồ án">Hướng dẫn đồ án</option>
             </select>
           </div>
 
