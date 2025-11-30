@@ -1,5 +1,5 @@
 .tutor-detail-container {
-  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   background-color: #fafafa;
   min-height: 100vh;
   padding: 0px 0 60px 0;
@@ -26,6 +26,8 @@
   height: 110px;
   border-radius: 16px;
   background-color: #eee;
+  background-size: cover;
+  background-position: center;
 }
 
 .tutor-info {
@@ -127,6 +129,31 @@
 
 .class-card button:hover {
   background-color: #155c96;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background-color: #f8f9fa;
+  border-color: #007bff;
+  color: #007bff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 @media (max-width: 768px) {

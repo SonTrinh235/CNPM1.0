@@ -6,11 +6,14 @@ export const ALL_CLASSES = [
     schedule: "Thứ 2-4 (08:00 - 10:00)",
     room: "Online (Zoom)",
     tutorUsername: "tutor1",
+    tutorId: 101,
     students: ["student1", "student2", "student3"],
     description: "Lớp lấy gốc toán cho sinh viên năm nhất.",
     fee: "500.000 VNĐ",
     status: "Đang mở",
-    image: "https://via.placeholder.com/150/0000FF/808080?text=Math"
+    image: "https://via.placeholder.com/150/0000FF/808080?text=Math",
+    materialIds: [4, 9, 15],
+    notificationIds: [101, 103]
   },
   {
     id: 2,
@@ -19,11 +22,14 @@ export const ALL_CLASSES = [
     schedule: "Thứ 3-5 (19:00 - 21:00)",
     room: "H1-304",
     tutorUsername: "tutor1",
+    tutorId: 101,
     students: ["student3", "student4", "student5"],
     description: "Cam kết đầu ra 650+.",
     fee: "1.200.000 VNĐ",
     status: "Sắp mở",
-    image: "https://via.placeholder.com/150/FF0000/FFFFFF?text=English"
+    image: "https://via.placeholder.com/150/FF0000/FFFFFF?text=English",
+    materialIds: [1, 20],
+    notificationIds: [102]
   },
   {
     id: 3,
@@ -32,11 +38,14 @@ export const ALL_CLASSES = [
     schedule: "Thứ 3-5 (13:00 - 15:00)",
     room: "B2-201",
     tutorUsername: "tutor2",
+    tutorId: 102,
     students: ["student4", "student6", "student1"],
     description: "Kiến thức căn bản về hóa học và các phản ứng.",
     fee: "450.000 VNĐ",
     status: "Đang mở",
-    image: "https://via.placeholder.com/150/00FFFF/000000?text=Chemistry"
+    image: "https://via.placeholder.com/150/00FFFF/000000?text=Chemistry",
+    materialIds: [7, 11], 
+    notificationIds: [104]
   },
   {
     id: 4,
@@ -45,11 +54,14 @@ export const ALL_CLASSES = [
     schedule: "Thứ 6 (13:00 - 16:00)",
     room: "Online (Teams)",
     tutorUsername: "tutor2",
+    tutorId: 102,
     students: ["student1", "student5", "student8"],
     description: "Lý thuyết và bài tập cơ học.",
     fee: "400.000 VNĐ",
     status: "Đang học",
-    image: "https://via.placeholder.com/150/FFFF00/000000?text=Physics"
+    image: "https://via.placeholder.com/150/FFFF00/000000?text=Physics",
+    materialIds: [5, 16],
+    notificationIds: [101]
   },
   {
     id: 5,
@@ -58,11 +70,14 @@ export const ALL_CLASSES = [
     schedule: "Thứ 2-4 (14:00 - 16:00)",
     room: "Online (Google Meet)",
     tutorUsername: "tutor3",
+    tutorId: 103,
     students: ["student10", "student2", "student8"],
     description: "HTML, CSS và Javascript cho người mới.",
     fee: "900.000 VNĐ",
     status: "Đang mở",
-    image: "https://via.placeholder.com/150/008080/FFFFFF?text=Web"
+    image: "https://via.placeholder.com/150/008080/FFFFFF?text=Web",
+    materialIds: [8, 13],
+    notificationIds: [102, 103]
   },
   {
     id: 6,
@@ -71,11 +86,14 @@ export const ALL_CLASSES = [
     schedule: "Thứ 4-6 (18:00 - 20:00)",
     room: "Online (Zoom)",
     tutorUsername: "tutor3",
+    tutorId: 103,
     students: ["student3", "student11"],
     description: "SQL cơ bản, mô hình ERD, truy vấn nâng cao.",
     fee: "950.000 VNĐ",
     status: "Đang mở",
-    image: "https://via.placeholder.com/150/000000/FFFFFF?text=Database"
+    image: "https://via.placeholder.com/150/000000/FFFFFF?text=Database",
+    materialIds: [3, 19],
+    notificationIds: [104]
   },
   {
     id: 7,
@@ -84,11 +102,14 @@ export const ALL_CLASSES = [
     schedule: "Chủ Nhật (09:00 - 11:00)",
     room: "Online (Zoom)",
     tutorUsername: "tutor4",
+    tutorId: 104,
     students: [],
     description: "Rèn luyện speaking và listening.",
     fee: "700.000 VNĐ",
     status: "Đang mở",
-    image: "https://via.placeholder.com/150/FFA500/000000?text=Speaking"
+    image: "https://via.placeholder.com/150/FFA500/000000?text=Speaking",
+    materialIds: [6],
+    notificationIds: []
   },
   {
     id: 8,
@@ -97,11 +118,14 @@ export const ALL_CLASSES = [
     schedule: "Thứ 3-5 (13:00 - 15:00)",
     room: "Online (Zoom)",
     tutorUsername: "tutor4",
+    tutorId: 104,
     students: ["student2", "student5", "student6"],
     description: "English chuyên ngành kỹ thuật và công nghệ.",
     fee: "750.000 VNĐ",
     status: "Đang mở",
-    image: "https://via.placeholder.com/150/FF6347/000000?text=EngTech"
+    image: "https://via.placeholder.com/150/FF6347/000000?text=EngTech",
+    materialIds: [14],
+    notificationIds: [102]
   },
   {
     id: 9,
@@ -110,36 +134,45 @@ export const ALL_CLASSES = [
     schedule: "Thứ 3 (08:00 - 10:00)",
     room: "A1-101",
     tutorUsername: "tutor1",
+    tutorId: 101,
     students: ["student1", "student3"],
     description: "Ma trận, vector, không gian tuyến tính.",
     fee: "600.000 VNĐ",
     status: "Đang mở",
-    image: "https://via.placeholder.com/150/6A5ACD/FFFFFF?text=LinearAlgebra"
+    image: "https://via.placeholder.com/150/6A5ACD/FFFFFF?text=LinearAlgebra",
+    materialIds: [9],
+    notificationIds: [103]
   },
   {
     id: 10,
     code: "ENG303",
-    name: "Giao Tiếp Tiếng Anh",
+    name: "Giao Tiếp Tiếng Anh (Lớp 2)",
     schedule: "Chủ Nhật (09:00 - 11:00)",
     room: "Online (Zoom)",
     tutorUsername: "tutor4",
+    tutorId: 104,
     students: ["students7", "student9"],
     description: "Rèn luyện speaking và listening.",
     fee: "700.000 VNĐ",
     status: "Đang mở",
-    image: "https://via.placeholder.com/150/FFA500/000000?text=Speaking"
+    image: "https://via.placeholder.com/150/FFA500/000000?text=Speaking",
+    materialIds: [6],
+    notificationIds: [101]
   },
   {
     id: 11,
     code: "ENG405",
-    name: "Tiếng Anh Chuyên Ngành",
+    name: "Tiếng Anh Chuyên Ngành (Lớp 2)",
     schedule: "Thứ 3-5 (16:00 - 18:00)",
     room: "Online (Zoom)",
     tutorUsername: "tutor4",
+    tutorId: 104,
     students: ["student2", "student5", "student6"],
     description: "English chuyên ngành kỹ thuật và công nghệ.",
     fee: "750.000 VNĐ",
     status: "Đang mở",
-    image: "https://via.placeholder.com/150/FF6347/000000?text=EngTech"
+    image: "https://via.placeholder.com/150/FF6347/000000?text=EngTech",
+    materialIds: [14],
+    notificationIds: []
   }
 ];

@@ -16,6 +16,7 @@ import Notifications from "./Pages/Notifications";
 import Profile from "./Pages/Profile";
 import CreateClass from "./Pages/Tutor/CreateClass";
 import Settings from "./Pages/Settings";
+import ClassDetail from "./Pages/ClassDetail";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/tutor/create-class" element={<CreateClass />} />
+              <Route path="/class/:id" element={<ClassDetail />} />
               <Route path="*" element={<h2>404 Not Found</h2>} />
             </Routes>
           </Router>

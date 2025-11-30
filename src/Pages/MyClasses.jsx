@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext"; 
 import "./css/MyClasses.css";
 import Navbar from "../Components/Navbar/Navbar";
@@ -11,6 +11,7 @@ const MyClasses = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const { user } = useAuth();
   const [myList, setMyList] = useState([]);
+  const navigate = useNavigate(); 
   useEffect(() => {
     if (!user) return;
 
@@ -58,7 +59,12 @@ const MyClasses = () => {
 
           <div className="myclass-list">
             {finalDisplay.map((item) => (
-              <div key={item.id} className="myclass-card">
+              <div 
+                key={item.id} 
+                className="myclass-card"
+                onClick={() => navigate(`/class/${item.id}`)}
+                style={{ cursor: "pointer" }}
+              >
                 <div 
                   className="myclass-img" 
                   style={{ 
@@ -78,11 +84,11 @@ const MyClasses = () => {
                   </p>
 
                   {user?.role === 'student' ? (
-                     <p className="author">GV: {item.tutorUsername}</p>
+                      <p className="author">GV: {item.tutorUsername}</p>
                   ) : (
-                     <p className="author" style={{color: '#0066cc', fontWeight: 'bold'}}>
-                        Sĩ số: {item.students.length} học viên
-                     </p>
+                      <p className="author" style={{color: '#0066cc', fontWeight: 'bold'}}>
+                         Sĩ số: {item.students.length} học viên
+                      </p>
                   )}
                 </div>
               </div>

@@ -38,11 +38,10 @@ const Sidebar = () => {
             </li> */}
           </>
         ) : (
-          /* --- MENU STUDENT --- */
           <>
             <li>
               <NavLink to="/tutors" className={({ isActive }) => (isActive ? "active" : "")}>
-                Tìm gia sư
+                Danh sách tutor 
               </NavLink>
             </li>
             <li>

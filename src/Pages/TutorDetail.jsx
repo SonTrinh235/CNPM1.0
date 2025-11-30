@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom"; // 1. Import useNavigate
 import Navbar from "../Components/Navbar/Navbar";
 import "./css/TutorDetail.css";
 import bkLogo from "../Assets/BK_logo.png";
@@ -9,6 +9,8 @@ import { ALL_CLASSES } from "../data/classes";
 
 const TutorDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate(); // 2. Khởi tạo navigate
+
   const tutor = MOCK_USERS.find((t) => t.id === id && t.role === 'tutor');
 
   if (!tutor) {
@@ -17,6 +19,12 @@ const TutorDetail = () => {
         <Navbar />
         <h2>Không tìm thấy thông tin Tutor</h2>
         <p>ID "{id}" không tồn tại trong hệ thống.</p>
+        <button 
+            onClick={() => navigate(-1)} 
+            style={{marginTop: "20px", padding: "10px 20px", cursor: "pointer"}}
+        >
+            Quay lại
+        </button>
       </div>
     );
   }
@@ -30,6 +38,10 @@ const TutorDetail = () => {
       <Navbar />
 
       <div className="tutor-detail-content">
+        <button className="btn-back" onClick={() => navigate(-1)}>
+          ← Quay lại danh sách
+        </button>
+
         {/* Header */}
         <div className="tutor-header">
           <div
